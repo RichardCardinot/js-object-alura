@@ -1,0 +1,53 @@
+const fichaGuerreiro = {
+ nome: "Aragorn",
+ classe: "guerreiro"
+}
+
+const equipoGuerreiro = {
+ espada: "Andúril",
+ capa: "capa élfica +2"
+}
+
+const guerreiro = { fichaGuerreiro, equipoGuerreiro }
+
+console.log(guerreiro)
+//   {
+//     fichaGuerreiro: { nome: 'Aragorn', classe: 'guerreiro' },
+//     equipoGuerreiro: { espada: 'Andúril', capa: 'capa élfica +2' }
+//   }
+
+// ===========================================================================
+
+const guerreiroSpread = { ...fichaGuerreiro, ...equipoGuerreiro } // ... é o spread operator
+
+console.log(guerreiroSpread)
+//   {
+//     nome: 'Aragorn',
+//     classe: 'guerreiro',
+//     espada: 'Andúril',
+//     capa: 'capa élfica +2'
+//   }
+
+
+// ===========================================================================
+
+const mago = {
+    nome: "Gandalf",
+    classe: "mago"
+   }
+
+const guerreiro2 = {
+    nome: "Aragorn",
+    classe: "guerreiro"
+   }
+   
+const ranger = {
+    nome: "Legolas",
+    classe: "ranger"
+   }
+
+const personagens2 = { ...mago, ...guerreiro2, ...ranger } // ... é o spread operator
+
+console.log(personagens2)
+// { nome: 'Legolas', classe: 'ranger' }
+// Como os objetos espalhados(spread) tesma a mesma chave, o javaScript sobscreve, ficando apenas com o último valor
